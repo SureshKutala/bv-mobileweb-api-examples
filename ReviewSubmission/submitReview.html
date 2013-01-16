@@ -1,0 +1,32 @@
+<div id="submit-review" class="bv-main-container" data-role="page" data-add-back-btn="false">
+
+	<div id="bv-control-header" data-role="header" class="ui-header ui-bar-d" role="banner"> 
+	</div>
+	<div data-role="content" role="main" class="ui-content">    
+		<div id="bv-body-review">
+			<div class="bv-app-content">
+                            <form id="bv-submit-review-form" method="post">
+                                <input type="hidden" name="UserId" value="1000001">	
+                                <input type="hidden" name="ProductId" value="TestUser">	
+				<input type="text" name="Title" placeholder="Title" class="bv-review-input">
+                                <!--  <input type="hidden" name="Action" value="Submit"> -->	
+				<div class="bv-star-rating">
+					<ul class="bv-fieldset-rating-group">
+						<li class="bv-fieldset-rating first" rating="1"><span>&#9733;</span></li>  
+						<li class="bv-fieldset-rating" rating="2"><span>&#9733;</span></li>  
+						<li class="bv-fieldset-rating" rating="3"><span>&#9733;</span></li>  
+						<li class="bv-fieldset-rating" rating="4"><span>&#9733;</span></li>  
+						<li class="bv-fieldset-rating last" rating="5"><span>&#9733;</span></li>
+					</ul>
+				</div>
+				<div>
+				</div>
+				<input type="text" name="Nickname" placeholder="Nickname" class="bv-review-input">
+				<textarea name="ReviewText" placeholder="Review" class="bv-review-input"></textarea>	
+                                <input type="submit" value="Send">
+				</form>
+			</div>
+		</div>
+	</div>	
+	<script src="js/submitreview.js" type="text/javascript" charset="utf-8"></script>
+</div>

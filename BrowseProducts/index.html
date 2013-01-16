@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0;" />
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320"> 
+    <meta http-equiv="cleartype" content="on">
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery/mobile/jquery.mobile-1.2.0.min.css"/>	
+
+	<!-- Adding jquery and handlebar libraries -->
+	<script src="js/jquery/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery/mobile/jquery.mobile-1.2.0.min.js"></script>  		
+	<script src="js/jquery/jquery-ui-1.8.23.custom.min.js"></script>
+	<script src="js/handlebars-1.0.b6.js" type="text/javascript" charset="utf-8"></script>	
+</head>  
+
+	
+<body id="bv-app"> 
+
+	<div id="search-home" class="bv-main-container" data-role="page" data-dom-cache=true>
+		
+		<div id="bv-control-header" data-role="header" class="ui-header ui-bar-d" role="banner" data-add-back-btn="false"> 
+		</div>
+
+		<div data-role="content" class="ui-content">	
+			<div id="bv-header">
+				<div id="logo-image-wrapper" class="rounded-corners">
+					<img src="images/bazaarvoice_logo.png" width="200"/>
+				</div>
+			</div>
+			<div id="bv-body-search">
+				<div id="bv-searchContainer">
+					<label for="search-input">Search</label>
+					<input id="search-input" type="search" name="search" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset no-searches">
+				</div>
+			</div>
+			<div class="bv-app-content"></div>
+		</div>
+
+
+		<!-- Handlebar template for product search results. ID should be defined in options object in home.js -->
+		<script id="searchResults" type="text/x-handlebars-template">
+			<div id="bv-content-container">
+				{{#if exception}}
+					<ul>
+						<li>
+						<div class="bv-review-wrapper">
+							<p class="exception">{{exceptionString}}<p>	
+						</div>
+						</li>
+					<ul>
+				{{else}}
+					<ul>
+					{{#each Results}}
+					<li>
+						<a class="bv-search-results" href="product.html" data-transition="slide" data-role="button" data-id="{{this.Id}}">
+						<div class="bv-review-wrapper">
+							<div class="bv-review-product-info-container">
+								<h1 class="bv-review-product-name">{{this.Name}}</h1>
+								<div class="bv-review-product-info">
+									<div class="bv-review-product-photo">
+										<img src="{{this.ImageUrl}}"/> 
+									</div>
+								</div>
+								<div class="bv-review-product-description">
+									<p>{{this.Description}}</p>
+								</div>
+							</div>
+						</div>
+						</a>
+					</li>
+					{{/each}}
+					</ul>
+				{{/if}}		
+			</div>
+		</script>	
+	</div>
+
+	<!-- Adding all base javascript libraries in addition to home.js which contains all the functionality for the home screen  -->
+    <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bvmobile.js" type="text/javascript" charset="utf-8"></script>	
+    <script src="js/home.js" type="text/javascript" charset="utf-8"></script>		
+
+</body>
+</html>

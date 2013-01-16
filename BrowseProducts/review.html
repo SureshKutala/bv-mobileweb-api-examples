@@ -1,0 +1,27 @@
+<div id="review-page" class="bv-main-container" data-role="page" data-add-back-btn="true">
+
+	<div id="bv-control-header" data-role="header" class="ui-header ui-bar-d" role="banner"> 
+	</div>
+	<div data-role="content" role="main" class="ui-content">    
+		<div id="bv-body-review">
+			<div class="bv-app-content"></div>
+		</div>
+	</div>	
+	<script src="js/review.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Handlebar template for review display. ID should be defined in options object in review.js -->
+	<script id="reviewPage" type="text/x-handlebars-template">
+		<div id="bv-content-container">
+			{{#each Results}}
+				<div class="bv-review-wrapper">
+					<div class="bv-review-info">
+						<p class="bv-review-title">{{this.Title}}</p>
+						<div class="bv-rating">
+							{{{starRating this.Rating this.RatingRange}}}
+						</div>
+					</div>
+					<p class="bv-review-content">{{this.ReviewText}}</p>
+				</div>
+			{{/each}}
+		</div
+	</script>	
+</div>
