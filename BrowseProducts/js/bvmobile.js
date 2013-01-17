@@ -47,11 +47,11 @@ BV.mobile = function(){
                          // **** Construct query string for BV API product and reviews requests *****
 			oStringFn = {
 				'products': {
-                                    'product':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&search=" + val,
-                                    'reviews':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&include=reviews&limit=10&filter=id:" + val
+                                    'product':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&search=" + val + "&stats=reviews",
+                                    'reviews':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&include=reviews&stats=reviews&limit=10&filter=id:" + val
 				},
 				'reviews':{
-                                    'reviews':BV.config.baseUrl + "bvstaging/data/reviews.json?passkey=" + BV.config.passkey + "&apiversion=5.3&filter=id:" + val
+                                    'reviews':BV.config.baseUrl + "/reviews.json?passkey=" + BV.config.passkey + "&apiversion=5.3&filter=id:" + val
 				}
 			};
 			return oStringFn[options.requestType][options.resultType];

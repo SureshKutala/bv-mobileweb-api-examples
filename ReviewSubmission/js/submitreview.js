@@ -9,13 +9,13 @@ BV.mobile.submitReview = function(){
             $this = this;
             this.initStarRating();
             $.mobile.page.prototype.options.addBackBtn = false;
-            // Set the form Action
+            
+            // **** Set the form action to point to BV API *****
             var submitUrl = BV.config.baseUrl + "submitreview.json?passkey=" + BV.config.passkey + "&apiversion=5.3"
             $('form').get(0).setAttribute('action', submitUrl);
            
-           $("#content-placeholder").html(template(data));
 
-           $("#bv-submit-review-form").submit(function(e) {
+            $("#bv-submit-review-form").submit(function(e) {
                 if(!$this.submitReviewForm(e)){
                     e.preventDefault();
                     return false;

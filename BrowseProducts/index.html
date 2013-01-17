@@ -63,7 +63,10 @@
 						<a class="bv-search-results" href="product.html" data-transition="slide" data-role="button" data-id="{{this.Id}}">
 						<div class="bv-review-wrapper">
 							<div class="bv-review-product-info-container">
-								<h1 class="bv-review-product-name">{{this.Name}}</h1>
+								<h1 class="bv-review-product-name">{{this.Name}} </h1>
+                                                                <div class="bv-rating">
+									{{{starRating this.ReviewStatistics.AverageOverallRating this.ReviewStatistics.OverallRatingRange}}}
+								</div>
 								<div class="bv-review-product-info">
 									<div class="bv-review-product-photo">
 										<img src="{{this.ImageUrl}}"/> 
