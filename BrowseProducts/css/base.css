@@ -114,8 +114,9 @@ a[data-role=button]:active {
 	padding:10px;
 }
 .bv-rating {
-	color: #FFCF00;
-    font-size:120%;
+    color: #FFCF00;
+    font-size:x-large;
+    font-family:sans-serif;
 }
 .bv-review-product-info-container {
 	overflow:hidden;
