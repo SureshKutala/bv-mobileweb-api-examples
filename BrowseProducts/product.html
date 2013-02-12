@@ -1,57 +1,61 @@
 <div id="product-page" class="bv-main-container" data-role="page" data-add-back-btn="true">
 
-	<div id="bv-control-header" data-role="header" class="ui-header ui-bar-d" role="banner"> 
-	</div>
-	<div data-role="content" role="main" class="ui-content">    
-		<div id="bv-body-product">
-			<div class="bv-app-content"></div>
-		</div>
-	</div>	
-	<script src="js/product.js" type="text/javascript" charset="utf-8"></script>
-	<!-- Handlebar template for product display. ID should be defined in options object in product.js -->
-	<script id="productPage" type="text/x-handlebars-template">
-		<div id="bv-content-container">
-			{{#each Results}}
-			<div class="bv-review-product-info-container">
-				<h1 class="bv-review-product-name">{{this.Name}}</h1>
-                                <div class="bv-rating">
-					{{{starRating this.ReviewStatistics.AverageOverallRating this.ReviewStatistics.OverallRatingRange}}}
-				</div>
-				<div class="bv-review-product-info">
-					<div class="bv-review-product-photo">
-						<img src="{{this.ImageUrl}}"/> 
-					</div>
-				</div>
-				<div class="bv-review-product-description">
-					<p>{{this.Description}}</p>
-				</div>
-			</div>
-			{{/each}}
-			<div id="bv-product-reviews">
-				<ul>
-				{{#each sortedReviews}}					
-					<li>
-						<a class="bv-review-results" href="review.html" data-transition="slide" data-role="button" data-id="{{this.Id}}">
-						<div class="bv-review-wrapper">
-							<div class="bv-review-info">
-								<h2 class="bv-review-title">{{this.Title}}</h2>
-								<div class="bv-rating">
-									{{{starRating this.Rating this.RatingRange}}}
-								</div>
-                                                                {{#eachProperty SecondaryRatings}}
-                                                                <div class="secondary-rating">
-                                                                    <h3>{{property}} </h3>
-                                                                    <img src="http://reviews.myshco.com/9344/{{value.Value}}_0/{{value.ValueRange}}/ratingSecondary.gif" />
-                                                                </div>
-                                                                {{/eachProperty}}
-							</div>
-							<p class="bv-review-content">{{this.ReviewText}}</p>
-						</div>
-						</a>
-					</li>
-				{{/each}}			
-				</ul>
-			</div>		
-		</div
-	</script>	
+    <div id="bv-control-header" data-role="header" class="ui-header ui-bar-d" role="banner"> 
+    </div>
+    <div data-role="content" role="main" class="ui-content">    
+        <div id="bv-body-product">
+            <div class="bv-app-content"></div>
+        </div>
+    </div>	
+    <script src="js/product.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Handlebar template for product display. ID should be defined in options object in product.js -->
+    <script id="productPage" type="text/x-handlebars-template">
+        <div id="bv-content-container">
+            {{#each Results}}
+            <div class="bv-review-product-info-container">
+                <h1 class="bv-review-product-name">{{this.Name}}</h1>
+                <div class="bv-rating">
+                    {{{starRating this.ReviewStatistics.AverageOverallRating this.ReviewStatistics.OverallRatingRange}}}
+                </div>
+                <div class="bv-review-product-info">
+                    <div class="bv-review-product-photo">
+                        <img src="{{this.ImageUrl}}"/> 
+                    </div>
+                </div>
+                <div class="bv-review-product-description">
+                    <p>{{this.Description}}</p>
+                </div>
+            </div>
+            {{/each}}
+            <div id="bv-product-reviews">
+                <ul>
+                    {{#each sortedReviews}}					
+                    <li>
+                        <a class="bv-review-results" href="review.html" data-transition="slide" data-role="button" data-id="{{this.Id}}">
+                            <div class="bv-review-wrapper">
+                                <div class="bv-review-info">
+                                    <h2 class="bv-review-title">{{this.Title}}</h2>
+                                    <div class="bv-rating">
+                                        {{{starRating this.Rating this.RatingRange}}}
+                                    </div>
+                                    {{#eachProperty SecondaryRatings}}
+                                    <div class="secondary-rating">
+
+                                        <h3>{{value.Label}} </h3>
+                                        <img src="http://reviews.myshco.com/9344/{{value.Value}}_0/{{value.ValueRange}}/ratingSecondary.gif" />
+                                        {{#if value.MinLabel }}
+                                        <div class="bv-secondary-rating-lables">{{value.MinLabel}} - {{value.MaxLabel}}</div>
+                                        {{/if}}
+                                    </div>
+                                    {{/eachProperty}}
+                                </div>
+                                <p class="bv-review-content">{{this.ReviewText}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {{/each}}			
+                </ul>
+            </div>		
+        </div
+    </script>	
 </div>

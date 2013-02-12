@@ -176,6 +176,11 @@ a[data-role=button]:active {
     font-family: Geneva,Arial,Helvetica,sans-serif;
 }
 
+.bv-secondary-rating-lables {
+    color: #CCC;
+    font-size: smaller;
+}
+
 @media only screen  and (min-device-width : 320px) and (max-device-width : 480px) {
 	.bv-review-product-description {
 		width:80%;
