@@ -16,8 +16,8 @@
 
 	<!-- Adding jquery and handlebar libraries -->
 	<script src="js/jquery/jquery-1.8.1.min.js"></script>
+      	<script src="js/jquery/jquery-ui-1.8.23.min.js"></script>
 	<script src="js/jquery/mobile/jquery.mobile-1.2.0.min.js"></script>  		
-	<script src="js/jquery/jquery-ui-1.8.23.custom.min.js"></script>
 	<script src="js/handlebars-1.0.b6.js" type="text/javascript" charset="utf-8"></script>	
 </head>  
 
@@ -63,7 +63,7 @@
 						<a class="bv-search-results" href="product.html" data-transition="slide" data-role="button" data-id="{{this.Id}}">
 						<div class="bv-review-wrapper">
 							<div class="bv-review-product-info-container">
-								<h1 class="bv-review-product-name">{{this.Name}} </h1>
+								<h2 class="bv-review-product-name">{{this.Name}} </h2>
                                                                 <div class="bv-rating">
 									{{{starRating this.ReviewStatistics.AverageOverallRating this.ReviewStatistics.OverallRatingRange}}}
 								</div>

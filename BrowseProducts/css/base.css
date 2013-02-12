@@ -8,6 +8,10 @@ body {
 	word-wrap: break-word;
 	 -webkit-text-size-adjust: none;	
 }
+
+p {
+    padding: 5px;
+}
 body#bv-app {
 	background-color:#efefef;
 	background:transparent;
@@ -106,7 +110,7 @@ a[data-role=button]:active {
 	color: #555;
 }
 .bv-review-content {
-	color: #66BFA9;
+	color: #58b0d9;
 }
 .bv-review-wrapper {
 	border:1px solid #CCC;
@@ -114,15 +118,16 @@ a[data-role=button]:active {
 	padding:10px;
 }
 .bv-rating {
-    color: #FFCF00;
+    color: #58b0d9;
     font-size:x-large;
-    font-family:sans-serif;
+    font-family:monospace;
+    padding:0 0 5px 0;
 }
 .bv-review-product-info-container {
 	overflow:hidden;
 }
 .bv-review-product-name {
-	padding:0 0 15px 0;
+	padding:0 0 0 0;
 	font-size:105%;
 	font-weight:bold;
 }
@@ -136,13 +141,14 @@ a[data-role=button]:active {
 	border:1px solid #CCC;
 	float:left;
 	text-decoration:none;
+    font-family: serif;
 }
 .bv-review-product-info .bv-review-product-photo {
 	margin-left:5%;
 	float:right;
 }
 .bv-review-product-description {
-	color:#66bfa9;
+	color:#58b0d9;
 	float:left;
 }
 /*
@@ -163,6 +169,11 @@ a[data-role=button]:active {
 	text-align:center;
 	font-size:200%;
 	color: #ccc;
+}
+
+.secondary-rating h3 {
+    color: #555;
+    font-family: Geneva,Arial,Helvetica,sans-serif;
 }
 
 @media only screen  and (min-device-width : 320px) and (max-device-width : 480px) {

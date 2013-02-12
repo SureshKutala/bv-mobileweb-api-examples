@@ -1,6 +1,6 @@
 var BV = BV || {};
 // **** Basic config parameters for BV API *****
-BV.config = { baseUrl : "http://apitestcustomer.ugc.bazaarvoice.com/bvstaging/data/", version: '5.3', passkey : 'kuy3zj9pr3n7i0wxajrzj04xo' };
+BV.config = { baseUrl : "http://reviews.myshco.com/bvstaging/data/", version: '5.4', passkey : '72n07szwiwjspk7x6idcry4ch' };
 BV.mobile = function(){
 	return {
 		// Handles all ajax calls for application
@@ -47,7 +47,7 @@ BV.mobile = function(){
                          // **** Construct query string for BV API product and reviews requests *****
 			oStringFn = {
 				'products': {
-                                    'product':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&search=" + val + "&stats=reviews",
+                                    'product':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&search=" + val + "&stats=reviews&filter=categoryid:neq:BV_MISCELLANEOUS_CATEGORY",
                                     'reviews':BV.config.baseUrl + "/products.json?passkey=" + BV.config.passkey + "&apiversion=5.3&include=reviews&stats=reviews&limit=10&filter=id:" + val
 				},
 				'reviews':{
